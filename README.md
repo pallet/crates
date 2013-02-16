@@ -12,8 +12,23 @@ repositories and their documentation.
 The [crate metadata](resources/pallet/crate/meta.edn) is used to drive
 everything.
 
+Set up lein to run with plugins from the project.
+
+```
+echo "src:resources:dev-resources" > .lein-classpath
+```
+
+To generate the docs you can specify a target directory.
+
+```
+lein crate-docs output-dir
+```
+
+The output directory defaults to the "target" directory.
+
+
 ## License
 
 Licensed under [EPL](http://www.eclipse.org/legal/epl-v10.html)
 
-Copyright 2013  Hugo Duncan.
+Copyright 2013 Hugo Duncan.
