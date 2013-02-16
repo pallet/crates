@@ -1,0 +1,47 @@
+;;; Metadata for crate repositories
+
+;;; This is a map from crate keyword to it's description.
+
+;;; The `:versions` key should be a sequence of maps, each with a pallet version
+;;; and the latest supported crate version.
+
+{:java {:header "Java"
+        :title "Install and configure java."
+        :git-repo "https://github.com/pallet/java-crate"
+        :tag-prefix "java-"
+        :versions [{:pallet "0.8.0-beta.1" :version "0.8.0-beta.1"}
+                   {:pallet "0.7" :version "0.7.1"
+                    :mvn-repo :sonatype :artifact-id "java"}
+                   {:pallet "0.6" :version "0.5.1"
+                    :mvn-repo :sonatype  :artifact-id "java"}
+                   {:pallet "0.5" :version "0.5.1"
+                    :mvn-repo :sonatype :artifact-id "java"}
+                   {:pallet "0.8-alpha.7" :version "0.8.0-alpha.1"
+                    :mvn-repo :sonatype :artifact-id "java"}
+                   {:pallet "0.8-alpha.8" :version "0.8.0-alpha.2"
+                    :mvn-repo :sonatype :artifact-id "java"}]}
+
+ :leiningen {:header "Leiningen"
+             :title "Install and configure leiningen."
+             :git-repo "https://github.com/pallet/lein-crate"
+             :tag-prefix ""
+             :artifact-id "lein"
+             :source-path "src/pallet/crate/lein.clj"
+             :versions [{:pallet "0.8.0-beta.1" :version "0.8.0-alpha.1"}]}
+
+ :git {:header "Git"
+       :title "Install and configure git."
+       :git-repo "https://github.com/pallet/git-crate"
+       :tag-prefix "git-"
+       :versions [{:pallet "0.8.0-beta.1" :version "0.8.0-alpha.1"}]}
+
+ :tomcat {:header "Tomcat"
+          :title "Install and configure tomcat."
+          :git-repo "https://github.com/pallet/tomcat-crate"
+          :tag-prefix "tomcat-"
+          :versions [{:pallet "0.7" :version "0.7.0-beta.1"
+                      :mvn-repo :sonatype :artifact-id "tomcat"}
+                     {:pallet "0.6" :version "0.6.1"
+                      :mvn-repo :sonatype :artifact-id "tomcat"}
+                     {:pallet "0.5" :version "0.5.1"
+                      :mvn-repo :sonatype :artifact-id "tomcat"}]}}
