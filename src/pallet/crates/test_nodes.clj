@@ -16,7 +16,7 @@
       {:image {:os-family :ubuntu :os-version-matches "10.10"
                :os-64-bit true}}
       :group-suffix "u1010"
-      :selectors #{::all :ubuntu :ubuntu-12 :ubuntu-10-10}}
+      :selectors #{::all :ubuntu :ubuntu-10 :ubuntu-10-10}}
      ;; https://s3.amazonaws.com/vmfest-images/debian-6.0.2.1-64bit-v0.3.vdi.gz
      {:node-spec
       {:image {:os-family :debian :os-version-matches "6.0.2.1"
