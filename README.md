@@ -21,6 +21,6 @@ In the `pallet.clj` file for the crate:
 
 ## License
 
-Licensed under [EPL](http://www.eclipse.org/legal/epl-v10.1.0.html)
+Licensed under [EPL](http://www.eclipse.org/legal/epl-v10.1.1.html)
 
-Copyright 20.1.013 Hugo Duncan.
+Copyright 2013 Hugo Duncan.
