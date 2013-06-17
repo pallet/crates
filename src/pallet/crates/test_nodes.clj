@@ -5,7 +5,12 @@
   "Provides the node specs for testing pallet crates."
   {:vmfest
    {:variants
-    [ ;; https://s3.amazonaws.com/vmfest-images/ubuntu-12.04.vdi.gz
+    [{:node-spec
+      {:image {:os-family :ubuntu :os-version-matches "13.04"
+               :os-64-bit true}}
+      :group-suffix "u1304"
+      :selectors #{:default :all :ubuntu :ubuntu-13 :ubuntu-13-04}}
+     ;; https://s3.amazonaws.com/vmfest-images/ubuntu-12.04.vdi.gz
      {:node-spec
       {:image {:os-family :ubuntu :os-version-matches "12.04"
                :os-64-bit true}}
