@@ -1,4 +1,4 @@
-(defproject com.palletops/crates "0.1.1-SNAPSHOT"
+(defproject com.palletops/crates "0.1.1"
   :description "Information for the pallet crates."
   :url "http://palletops.com"
   :license {:name "Eclipse Public License"
