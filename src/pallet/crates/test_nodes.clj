@@ -73,13 +73,12 @@
       {:image {:os-family :debian :os-version-matches "6.0.2.1"
                :os-64-bit true}}
       :group-suffix "d602"
-      :selectors #{:all :debian :debian-6 :debiab-6-0}}
+      :selectors #{:all :debian :debian-6 :debian-6-0 :debian-6-0-2}}
      ;; https://s3.amazonaws.com/vmfest-images/Debian-6.0.1a-64bit.vdi.gz
      {:node-spec
       {:image {:os-family :debian :os-version-matches "6.0.1.*"
                :os-64-bit true}}
       :group-suffix "d601"
-      :selectors #{:all :debian :debian-6 :debiab-6-0}}]}
+      :selectors #{:all :debian :debian-6 :debian-6-0 :debian-6-0-1}}]}
    :aws-ec2 {:variants (aws-nodes false)}
    :pallet-ec2 {:variants (aws-nodes true)}})
-
