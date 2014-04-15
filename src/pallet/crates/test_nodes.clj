@@ -11,9 +11,9 @@
     {:node-spec
      {:image
       {:os-family os-family
-       :os-version os-version
+       (if pallet-aws? :os-version :os-version-matches) os-version
        :os-64-bit os-64-bit
-       :login-user login-user
+       (if pallet-aws? :login-user :override-login-user) login-user
        :image-id image-id}
       :location { :location-id "us-east-1a"}}
      :group-suffix (str (first os-family-name) maj min)
