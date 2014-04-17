@@ -1,6 +1,9 @@
 (ns pallet.crates.test-nodes
   "Node definitions for testing pallet nodes.")
 
+(def aws-hardware-id
+  (or (System/getenv "TEST_ENV_AWS_HW_ID") "t1.micro"))
+
 (defn aws-node
   [pallet-aws? os-family [maj min]  os-64-bit image-id login-user & selectors]
   (let [os-family-name (name os-family)
@@ -15,7 +18,8 @@
        :os-64-bit os-64-bit
        (if pallet-aws? :login-user :override-login-user) login-user
        :image-id image-id}
-      :location { :location-id "us-east-1a"}}
+      :location {:location-id "us-east-1a"}
+      :hardware {:hardware-id aws-hardware-id}}
      :group-suffix (str (first os-family-name) maj min)
      :selectors (into #{:default
                         :all
@@ -37,6 +41,7 @@
      [:ubuntu ["12" "04"] true "ami-0b9c9f62" "ubuntu"]
      [:ubuntu ["13" "04"] true "ami-1d132274" "ubuntu"]
      [:ubuntu ["13" "10"] true "ami-89181be0" "ubuntu"]
+     [:ubuntu ["14" "04"] true "ami-018c9568" "ubuntu"]
      [:centos ["6" "5"] true "ami-05ebd06c" "root"] ;; RightImage_CentOS_6.5_x64_v13.5.2.2_EBS
      ;; disabled because we already have 6.5
      ;;[:centos ["6" "4"] true "ami-d14c34b8" "root"] ;; RightImage_CentOS_6.4_x64_v13.5.0.2
