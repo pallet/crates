@@ -1,3 +1,15 @@
+## 0.1.2
+
+- Add rackspace
+
+- Update centos, debian and ubuntu images for ec2
+
+- Fix template generation for jclouds.
+
+- Fix debian selectors
+
+- Add AWS images and support for pallet-aws.
+
 # Release Notes
 
 ## 0.1.1
