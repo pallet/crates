@@ -88,4 +88,19 @@
       :group-suffix "d601"
       :selectors #{:all :debian :debian-6 :debian-6-0 :debian-6-0-1}}]}
    :aws-ec2 {:variants (aws-nodes false)}
-   :pallet-ec2 {:variants (aws-nodes true)}})
+   :pallet-ec2 {:variants (aws-nodes true)}
+
+   :rackspace-cloudservers-us
+   {:variants
+    [{:node-spec
+      {:image {:os-family :ubuntu
+               :os-version-matches "14.04"
+               :os-64-bit true}}
+      :group-suffix "u1404"
+      :selectors #{:default :all :ubuntu :ubuntu-14 :ubuntu-14-04}}
+     {:node-spec
+      {:image {:os-family :coreos
+               :os-version-matches "1"
+               :os-64-bit true}}
+      :group-suffix "coreos"
+      :selectors #{:default :all :coreos}}]}})
