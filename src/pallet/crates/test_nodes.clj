@@ -42,9 +42,11 @@
      [:ubuntu ["13" "04"] true "ami-1d132274" "ubuntu"]
      [:ubuntu ["13" "10"] true "ami-89181be0" "ubuntu"]
      [:ubuntu ["14" "04"] true "ami-018c9568" "ubuntu"]
-     [:centos ["6" "5"] true "ami-05ebd06c" "root"] ;; RightImage_CentOS_6.5_x64_v13.5.2.2_EBS
+     [:centos ["6" "5"] true "ami-8997afe0" "root"] ;; http://wiki.centos.org/Cloud/AWS
+     ;; [:centos ["6" "5"] true "ami-05ebd06c" "root"] ;; RightImage_CentOS_6.5_x64_v13.5.2.2_EBS
      ;; disabled because we already have 6.5
      ;;[:centos ["6" "4"] true "ami-d14c34b8" "root"] ;; RightImage_CentOS_6.4_x64_v13.5.0.2
+     [:debian ["7" "5"] true "ami-848a6eec" "admin"] ;; ebs https://wiki.debian.org/Cloud/AmazonEC2Image/Wheezy
      [:debian ["7" "4"] true "ami-d3675dba" "admin"] ;; ebs https://wiki.debian.org/Cloud/AmazonEC2Image/Wheezy
      ;; (marketplace) [:debian ["7" "3"] true "ami-0da18864" "admin"] ;; ebs https://wiki.debian.org/Cloud/AmazonEC2Image
      ;;disabled because we already have 7.4
@@ -57,6 +59,11 @@
   {:vmfest
    {:variants
     [{:node-spec
+      {:image {:os-family :ubuntu :os-version-matches "14.04"
+               :os-64-bit true}}
+      :group-suffix "u1404"
+      :selectors #{:default :all :ubuntu :ubuntu-14 :ubuntu-14-04}}
+     {:node-spec
       {:image {:os-family :ubuntu :os-version-matches "13.04"
                :os-64-bit true}}
       :group-suffix "u1304"
